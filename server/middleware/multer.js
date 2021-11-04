@@ -12,4 +12,4 @@ var storage = multer.diskStorage({
     }
 })
 
-module.exports = store = multer({ storage: storage })
+module.exports = store = multer({ storage: storage })  //46:17
