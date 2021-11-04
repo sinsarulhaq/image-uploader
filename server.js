@@ -9,7 +9,7 @@ app.use(express.json())
 app.use(express.static(path.join(__dirname,'public')))
 
 //setup view engine
-app.set('view wngine','hbs')
+app.set('view engine','hbs')
 app.engine('hbs',hbs({
     extname:'hbs',
     defaultView:'default',
@@ -19,7 +19,7 @@ app.engine('hbs',hbs({
 
 //routes
 app.get('/',(req, res)=>{
-    res.send("<h3>express server</h3>")
+    res.render('main')
 })
 
 app.listen(3000,()=>{
