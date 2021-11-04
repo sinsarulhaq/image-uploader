@@ -9,7 +9,7 @@
                         <form action="/uploadmultiple" enctype="multipart/form-data" method="POST">
                             <div class="row">
                                 <div class="col-8">
-                                    <input type="file" class="form-control" name="images" id="formFile" multiple/>
+                                    <input type="file" class="form-control" name="images" id="formFile" multiple />
                                 </div>
                                 <div class="col-2">
                                     <input type="submit" class="btn btn-warning" value="upload images">
@@ -23,17 +23,26 @@
         {{!-- display images --}}
         <section class="mt-5">
             <div class="row">
+                {{#each images}}
+                {{#each this}}
+                {{#if imageBase64}}
+                {{!-- bootstrap cards --}}
                 <div class="col-3">
                     <div class="card shadow" style="width: 18rem;">
-                        <img src="..." class="card-img-top" class="img-fluid" alt="...">
+                        <img src='data:{{contentType}};base64,{{imageBase64}}' class="card-img-top" class="img-fluid" alt="...">
                         <div class="card-body">
                             <h5 class="card-title font-poppins">UI/UX Design</h5>
-                            <p class="card-text font-size-09">Some quick example text to build on the card title and make up the bulk
+                            <p class="card-text font-size-09">Some quick example text to build on the card title and
+                                make up the bulk
                                 of the card's content.</p>
                             <a href="#" class="btn btn-info font-size-09">Read More</a>
                         </div>
                     </div>
                 </div>
+                {{!-- bootstrap cards --}}
+                {{/if}}
+                {{/each}}
+                {{/each}}
             </div>
         </section>
         {{!-- display images --}}

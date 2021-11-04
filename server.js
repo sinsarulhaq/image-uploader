@@ -8,6 +8,9 @@ app.use(express.json())
 //static files
 app.use(express.static(path.join(__dirname,'public')))
 
+//connect mongobd database
+require('./database/database')()
+
 //setup view engine
 app.set('view engine','hbs')
 app.engine('hbs',hbs({
